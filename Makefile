@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
 
-bin/exe: obj/main.o
+bin/exe: obj/main.o obj/ui.o
 	$(CC) $(CFLAGS) $^ -o bin/exe
 
 obj/%.o: src/%.c
