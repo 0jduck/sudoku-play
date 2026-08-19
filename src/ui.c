@@ -32,6 +32,8 @@ int side(void) {
 // ---- move ----
 void move(int x, int y) {
   // math
+  x++;
+  y++;
   x = (x * 2) + side();
   y = (y * 2) + top();
   // move
@@ -83,7 +85,7 @@ void boxLine(int line[9]) {
     if (line[i] == 0)
       printf(" │");
     else
-      printf("%i│", line[i]);
+      printf("\033[38;2;42;168;137m%i\033[0m│", line[i]);
   }
   printf("\n");
 }
@@ -105,5 +107,5 @@ void draw(int sudoku[9][9]) {
   // fflush
   fflush(stdout);
   // move
-  move(1, 1);
+  move(0, 0);
 }
